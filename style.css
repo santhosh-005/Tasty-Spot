@@ -69,6 +69,10 @@ input{
     margin: 50px 0px 30px 50px;
 }
 
+#search-result-container{
+    display: none;
+}
+
 #random-meal{
     margin: auto;
     height:50vh;
@@ -87,7 +91,7 @@ hr{
 #search-result-meal{
     margin: auto;
     height: auto;
-    border: 1px solid rgb(29, 194, 7);
+    /* border: 1px solid rgb(29, 194, 7); */
     width: 95vw;
     display: flex;
     justify-content: center;

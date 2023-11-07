@@ -5,6 +5,8 @@ const searchInput=document.getElementById("search-input");
 const searchIcon=document.getElementById("search-icon")
 const searchResultMeal=document.getElementById('search-result-meal')
 
+const searchResultContainer=document.getElementById("search-result-container")
+
 
 function getRandomMeal(){
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -55,6 +57,8 @@ function appendRandomMeal(data){
 
 
 searchIcon.onclick=()=>{
+  
+  searchResultContainer.style.display='inherit';
   preferFood=searchInput.value;
   console.log(preferFood);
 
