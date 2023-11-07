@@ -21,13 +21,18 @@ function appendRandomMeal(data){
 
   let image=document.createElement("img");
   let h3=document.createElement("h3");
+  let p =document.createElement("p")
 
   image.src=data.strMealThumb;
   image.style.cursor='pointer';
   image.className='meal-images'
   h3.innerText=data.strMeal;
 
-  randomMeal.append(image,h3)
+
+  p.innerText=`Category:${data.strCategory}`;
+  p.style.fontSize='1em'
+
+  randomMeal.append(image,h3,p)
   randomMeal.className='meal-div';
    
   
