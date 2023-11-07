@@ -2,7 +2,6 @@ const randomMeal=document.getElementById("random-meal");
 const popUp=document.getElementById("pop-up");
 
 const searchInput=document.getElementById("search-input");
-const searchIcon=document.getElementById("search-icon")
 const searchResultMeal=document.getElementById('search-result-meal')
 
 const searchResultContainer=document.getElementById("search-result-container")
@@ -56,16 +55,19 @@ function appendRandomMeal(data){
 
 
 
-searchIcon.onclick=()=>{
-  
-  searchResultContainer.style.display='inherit';
-  preferFood=searchInput.value;
-  console.log(preferFood);
+searchInput.addEventListener('keypress',(e)=>{
+  if(e.code==="Enter"){
+    searchResultContainer.style.display='inherit';
+    preferFood=searchInput.value;
+    console.log(preferFood);
 
-  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${preferFood}`)
-  .then((res)=>res.json())
-  .then((res)=>{displaySearch(res.meals)})
-}
+    searchResultContainer.scrollIntoView({ behavior: 'smooth' });
+  
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${preferFood}`)
+    .then((res)=>res.json())
+    .then((res)=>{displaySearch(res.meals)})
+  }
+})
 
 function displaySearch(data){
   console.log(data)
