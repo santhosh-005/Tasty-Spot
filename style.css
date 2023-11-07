@@ -139,11 +139,6 @@ hr{
     border: 1px solid black;
 }
 
-/* @media screen and(max-width:650px) {
-    .header{
-        font-size: small;
-    }
-}  */
 
 @media (max-width:500px) {
     .header{

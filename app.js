@@ -56,12 +56,12 @@ function appendRandomMeal(data){
 
 
 searchInput.addEventListener('keypress',(e)=>{
-  if(e.code==="Enter"){
+  if(e.code==="Enter"){ 
     searchResultContainer.style.display='inherit';
     preferFood=searchInput.value;
     console.log(preferFood);
 
-    searchResultContainer.scrollIntoView({ behavior: 'smooth' });
+    // searchResultContainer.scrollIntoView({ behavior: 'smooth' });
   
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${preferFood}`)
     .then((res)=>res.json())
