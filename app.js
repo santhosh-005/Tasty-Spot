@@ -70,11 +70,14 @@ searchInput.addEventListener('keypress',(e)=>{
   
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${preferFood}`)
     .then((res)=>res.json())
-    .then((res)=>{displaySearch(res.meals)})
+    .then((res)=>{searchResultMeal.innerText="",
+      displaySearch(res.meals)})
   }
 })
 
 function displaySearch(data){
+
+  
   console.log(data)
   data.forEach((element) => {
     let div=document.createElement('div');
